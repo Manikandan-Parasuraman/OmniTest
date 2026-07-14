@@ -1,32 +1,31 @@
 [build-system]
-requires = ["setuptools>=69", "wheel"]
+requires = ["setuptools>=80", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "OmniTest"
+name = "omnitest"
 version = "0.1.0"
-description = "One platform for everything."
+description = "One platform for everything"
 readme = "README.md"
 requires-python = ">=3.10"
+license = {text = "MIT"}
 
 authors = [
-    { name = "Your Name" }
+    {name = "Manikandan Parasuraman", email = "manikandan.p,learning@gmail.com"}
 ]
-
-license = { text = "MIT" }
 
 keywords = [
     "automation",
     "testing",
-    "qa",
     "playwright",
-    "selenium"
+    "selenium",
+    "qa"
 ]
 
 classifiers = [
     "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
-    "Operating System :: OS Independent"
+    "Operating System :: OS Independent",
+    "License :: OSI Approved :: MIT License"
 ]
 
 dependencies = []
