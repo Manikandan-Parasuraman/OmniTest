@@ -2,6 +2,7 @@ from omnitest.browser import BrowserConfig
 
 
 def test_default_headless():
+    """Verify that BrowserConfig enables headless mode by default."""
 
     config = BrowserConfig()
 
@@ -9,6 +10,7 @@ def test_default_headless():
 
 
 def test_default_browser():
+    """Verify that BrowserConfig uses Chromium as the default browser."""
 
     config = BrowserConfig()
 

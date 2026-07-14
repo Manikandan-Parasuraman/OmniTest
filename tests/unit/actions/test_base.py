@@ -4,6 +4,7 @@ from omnitest.actions.base import BaseAction
 
 
 def test_base_action_initialization():
+    """Verify that BaseAction stores the provided browser instance."""
 
     browser = MagicMock()
 
@@ -13,9 +14,9 @@ def test_base_action_initialization():
 
 
 def test_playwright_property():
+    """Verify that the playwright property returns the browser's Playwright page instance."""
 
     browser = MagicMock()
-
     page = MagicMock()
 
     browser.page.playwright = page

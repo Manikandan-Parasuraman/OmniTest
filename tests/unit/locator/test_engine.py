@@ -4,6 +4,7 @@ from omnitest.locator import LocatorEngine
 
 
 def test_css_locator():
+    """Verify that a CSS selector is resolved using page.locator()."""
 
     page = MagicMock()
 
@@ -11,7 +12,9 @@ def test_css_locator():
 
     page.locator.assert_called_once_with("#login")
 
+
 def test_text_locator():
+    """Verify that a text selector is resolved using page.get_by_text()."""
 
     page = MagicMock()
 

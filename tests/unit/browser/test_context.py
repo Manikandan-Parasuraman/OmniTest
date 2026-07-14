@@ -5,6 +5,8 @@ from omnitest.browser.page import PageManager
 
 
 def test_browser_reference():
+    """Verify that BrowserContext stores the provided browser instance."""
+
     browser = MagicMock()
     context = MagicMock()
 
@@ -14,6 +16,8 @@ def test_browser_reference():
 
 
 def test_context_reference():
+    """Verify that BrowserContext stores the provided Playwright browser context."""
+
     browser = MagicMock()
     context = MagicMock()
 
@@ -23,6 +27,8 @@ def test_context_reference():
 
 
 def test_page_manager_created():
+    """Verify that BrowserContext initializes a PageManager instance."""
+
     browser = MagicMock()
     context = MagicMock()
 

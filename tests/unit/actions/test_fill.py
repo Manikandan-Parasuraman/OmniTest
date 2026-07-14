@@ -5,6 +5,7 @@ from omnitest.actions.fill import FillAction
 
 @patch("omnitest.actions.fill.BaseAction.execute")
 def test_fill(mock_execute, mock_browser, mock_locator):
+    """Verify that FillAction delegates the fill operation to BaseAction.execute."""
 
     action = FillAction(mock_browser)
 
