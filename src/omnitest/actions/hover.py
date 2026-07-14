@@ -11,7 +11,6 @@ class HoverAction(BaseAction):
     """
 
     def __call__(self, selector: str, **kwargs):
-
         """Hover over the element identified by `selector`."""
 
         self.validate_selector(selector)

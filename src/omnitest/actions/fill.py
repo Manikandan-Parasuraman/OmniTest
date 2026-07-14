@@ -16,7 +16,6 @@ class FillAction(BaseAction):
         value: str,
         **kwargs,
     ):
-
         """Fill the element identified by `selector` with `value`.
 
         Extra keyword arguments are forwarded to Playwright's `fill`.

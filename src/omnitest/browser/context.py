@@ -84,17 +84,11 @@ class BrowserContext:
 
             logger.info("Creating browser context")
 
-            self._context = self._browser.new_context(
-                **self._config.context_options
-            )
+            self._context = self._browser.new_context(**self._config.context_options)
 
-            self._context.set_default_timeout(
-                self._config.timeout
-            )
+            self._context.set_default_timeout(self._config.timeout)
 
-            self._context.set_default_navigation_timeout(
-                self._config.navigation_timeout
-            )
+            self._context.set_default_navigation_timeout(self._config.navigation_timeout)
 
             self.page = PageManager(self._context)
 

@@ -12,7 +12,7 @@ from typing import Any
 from .selector import SUPPORTED_SELECTOR_STRATEGIES, Selector
 
 
-class SelectorParser:   # pylint: disable=too-few-public-methods
+class SelectorParser:  # pylint: disable=too-few-public-methods
     """
     Parse user selectors into a normalized Selector object.
 
@@ -67,9 +67,7 @@ class SelectorParser:   # pylint: disable=too-few-public-methods
         if isinstance(selector, dict):
             return cls._parse_dict(selector)
 
-        raise TypeError(
-            f"Unsupported selector type: {type(selector).__name__}"
-        )
+        raise TypeError(f"Unsupported selector type: {type(selector).__name__}")
 
     # ------------------------------------------------------------------ #
 
@@ -93,11 +91,7 @@ class SelectorParser:   # pylint: disable=too-few-public-methods
             return Selector("css", selector[4:])
 
         # CSS
-        if (
-            selector.startswith("#")
-            or selector.startswith(".")
-            or selector.startswith("[")
-        ):
+        if selector.startswith("#") or selector.startswith(".") or selector.startswith("["):
             return Selector("css", selector)
 
         # Default = visible text
@@ -109,18 +103,14 @@ class SelectorParser:   # pylint: disable=too-few-public-methods
     def _parse_tuple(selector: tuple) -> Selector:
 
         if len(selector) != 2:
-            raise ValueError(
-                "Tuple selector must contain exactly two values."
-            )
+            raise ValueError("Tuple selector must contain exactly two values.")
 
         strategy, value = selector
 
         strategy = strategy.lower()
 
         if strategy not in SUPPORTED_SELECTOR_STRATEGIES:
-            raise ValueError(
-                f"Unsupported selector strategy '{strategy}'."
-            )
+            raise ValueError(f"Unsupported selector strategy '{strategy}'.")
 
         return Selector(strategy, value)
 
@@ -143,17 +133,11 @@ class SelectorParser:   # pylint: disable=too-few-public-methods
 
             role = selector["role"]
 
-            kwargs = {
-                key: value
-                for key, value in selector.items()
-                if key != "role"
-            }
+            kwargs = {key: value for key, value in selector.items() if key != "role"}
 
             return Selector(
                 "role",
                 (role, kwargs),
             )
 
-        raise ValueError(
-            "Unsupported dictionary selector."
-        )
+        raise ValueError("Unsupported dictionary selector.")

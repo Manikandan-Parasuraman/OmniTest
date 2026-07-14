@@ -31,9 +31,7 @@ class LocatorEngine:
         try:
             handler = handlers[parsed.strategy]
         except KeyError as exc:
-            raise ValueError(
-                f"Unsupported selector strategy '{parsed.strategy}'."
-            ) from exc
+            raise ValueError(f"Unsupported selector strategy '{parsed.strategy}'.") from exc
 
         return handler(parsed.value)
 

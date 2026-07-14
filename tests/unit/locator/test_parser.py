@@ -11,10 +11,10 @@ from src.omnitest.locator.selector import (
     SelectorType,
 )
 
-
 # --------------------------------------------------------------------
 # String Selectors
 # --------------------------------------------------------------------
+
 
 def test_parse_css_id_selector():
     """Verify that a CSS ID selector is parsed using the 'css' strategy."""
@@ -83,6 +83,7 @@ def test_parse_text():
 # Tuple Selectors
 # --------------------------------------------------------------------
 
+
 @pytest.mark.parametrize(
     "strategy,value",
     [
@@ -118,6 +119,7 @@ def test_supported_selector_strategies_are_shared():
 # Dictionary Selectors
 # --------------------------------------------------------------------
 
+
 def test_parse_role_dictionary():
     """Verify that role-based dictionary selectors preserve role and keyword arguments."""
 
@@ -142,6 +144,7 @@ def test_parse_role_dictionary():
 # Existing Selector Object
 # --------------------------------------------------------------------
 
+
 def test_existing_selector_returns_same_instance():
     """Verify that parsing an existing Selector returns the same object."""
 
@@ -155,6 +158,7 @@ def test_existing_selector_returns_same_instance():
 # --------------------------------------------------------------------
 # Invalid Inputs
 # --------------------------------------------------------------------
+
 
 def test_empty_selector():
     """Verify that an empty selector raises a ValueError."""

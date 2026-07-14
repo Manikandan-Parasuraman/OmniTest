@@ -19,7 +19,6 @@ from typing import TYPE_CHECKING, Any, Callable
 from omnitest.locator.engine import LocatorEngine
 from omnitest.logger import get_logger
 
-
 if TYPE_CHECKING:
     from omnitest.browser.page import BrowserPage
 
@@ -130,6 +129,7 @@ class BaseAction:
         - HTML report
         """
         logger.exception("Action '%s' failed: %s", action, exc)
+
     def execute(
         self,
         action: str,

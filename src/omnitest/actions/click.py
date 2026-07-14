@@ -11,7 +11,6 @@ class ClickAction(BaseAction):
     """
 
     def __call__(self, selector: str, **kwargs):
-
         """Click the element identified by `selector`.
 
         Any additional keyword arguments are forwarded to Playwright's

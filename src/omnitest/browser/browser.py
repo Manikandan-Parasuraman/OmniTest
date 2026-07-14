@@ -31,6 +31,7 @@ except ModuleNotFoundError:  # pragma: no cover - optional dependency
         """
         raise RuntimeError("playwright is not installed")
 
+
 from omnitest.actions.click import ClickAction
 from omnitest.actions.fill import FillAction
 
@@ -72,9 +73,7 @@ class Browser:  # pylint: disable=too-many-instance-attributes
             if hasattr(self.config, key):
                 setattr(self.config, key, value)
             else:
-                raise AttributeError(
-                    f"Unknown browser configuration '{key}'"
-                )
+                raise AttributeError(f"Unknown browser configuration '{key}'")
 
         self._playwright: Optional[Playwright] = None
         self._browser: Optional[PlaywrightBrowser] = None
@@ -85,6 +84,7 @@ class Browser:  # pylint: disable=too-many-instance-attributes
         self._started = False
 
         self.start()
+
     # ----------------------------------------------------- #
     # Browser Lifecycle
     # ----------------------------------------------------- #

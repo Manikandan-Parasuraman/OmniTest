@@ -162,9 +162,7 @@ class PageManager:
 
             logger.info("Creating new page")
 
-            page = BrowserPage(
-                self._context.new_page()
-            )
+            page = BrowserPage(self._context.new_page())
 
             self._pages.append(page)
 
