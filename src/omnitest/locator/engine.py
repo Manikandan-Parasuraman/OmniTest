@@ -1,11 +1,32 @@
+"""Selector resolution engine.
+
+This module converts a normalized `Selector` (from `SelectorParser`) into
+Playwright locator calls. It centralizes the mapping from selector
+strategies to the corresponding Playwright APIs.
+"""
+
 from .parser import SelectorParser
 
+
 class LocatorEngine:
+    """Resolve selectors against a Playwright page instance.
+
+    Parameters
+    ----------
+    page:
+        A Playwright page or page-like object exposing locator/get_by_* APIs.
+    """
 
     def __init__(self, page):
         self._page = page
 
     def find(self, selector):
+        """Return a Playwright locator for the given selector.
+
+        The `selector` may be any supported form (string, tuple, dict, or
+        `Selector` object). This method relies on `SelectorParser` to
+        normalize the input.
+        """
 
         parsed = SelectorParser.parse(selector)
 
