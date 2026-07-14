@@ -14,17 +14,10 @@ Responsibilities
 
 from __future__ import annotations
 
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING, Any, Callable
 
-try:
-    from playwright.sync_api import Locator
-except ModuleNotFoundError:  # pragma: no cover
-    Locator = Any
-
-from omnitest.logger import get_logger
-from collections.abc import Callable
-from typing import Any  # noqa: F821
 from omnitest.locator.engine import LocatorEngine
+from omnitest.logger import get_logger
 
 
 if TYPE_CHECKING:
@@ -137,7 +130,6 @@ class BaseAction:
         - HTML report
         """
         logger.exception("Action '%s' failed: %s", action, exc)
-        
     def execute(
         self,
         action: str,
