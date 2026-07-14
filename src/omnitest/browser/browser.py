@@ -22,15 +22,23 @@ except ModuleNotFoundError:  # pragma: no cover - optional dependency
     Playwright = object
 
     def sync_playwright():
+        """Placeholder when Playwright is not installed.
+
+        Raises
+        ------
+        RuntimeError
+            Always raised to indicate Playwright is unavailable.
+        """
         raise RuntimeError("playwright is not installed")
 
-from .config import BrowserConfig
-from .page import PageManager
 from omnitest.actions.click import ClickAction
 from omnitest.actions.fill import FillAction
 
+from .config import BrowserConfig
+from .page import PageManager
 
-class Browser:
+
+class Browser:  # pylint: disable=too-many-instance-attributes
     """
     Main browser interface for OmniTest.
     """
@@ -77,7 +85,6 @@ class Browser:
         self._started = False
 
         self.start()
-        
     # ----------------------------------------------------- #
     # Browser Lifecycle
     # ----------------------------------------------------- #
@@ -107,7 +114,7 @@ class Browser:
 
         self._click = ClickAction(self._browser)
         self._fill = FillAction(self._browser)
-        
+
         self._started = True
 
     # ----------------------------------------------------- #
@@ -154,7 +161,6 @@ class Browser:
 
         return self.page.current
 
-
     # ----------------------------------------------------- #
     # Context Manager
     # ----------------------------------------------------- #
@@ -163,7 +169,7 @@ class Browser:
         return self
 
     def __exit__(self, exc_type, exc, tb):
-        self.close()        
+        self.close()
         
     # ------------------------------------------------------------------ #
     # Actions

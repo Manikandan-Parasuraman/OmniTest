@@ -17,7 +17,7 @@ ColorScheme = Literal["light", "dark", "no-preference"]
 
 
 @dataclass(slots=True)
-class BrowserConfig:
+class BrowserConfig:  # pylint: disable=too-many-instance-attributes
     """Configuration options for launching and configuring a browser."""
 
     browser: BrowserType = DEFAULT_BROWSER

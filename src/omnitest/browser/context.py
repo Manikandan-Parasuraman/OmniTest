@@ -5,6 +5,9 @@ This module provides the BrowserContext abstraction responsible for
 creating and managing Playwright browser contexts.
 """
 
+# Allow imported Playwright aliases that look like constants
+# pylint: disable=invalid-name
+
 from __future__ import annotations
 
 from typing import TYPE_CHECKING, Any
@@ -189,7 +192,7 @@ class BrowserContext:
             self._context.close()
 
             logger.info("Browser context closed")
-            
-            
+
     def __getattr__(self, name: str):
+        """Delegate unknown attributes to the current page."""
         return getattr(self.page.current, name)

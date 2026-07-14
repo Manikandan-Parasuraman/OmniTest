@@ -5,6 +5,9 @@ This module provides BrowserPage and PageManager, which wrap Playwright
 pages and manage browser tabs.
 """
 
+# Allow Playwright aliases that look like constants
+# pylint: disable=invalid-name
+
 from __future__ import annotations
 
 from typing import Any
@@ -65,22 +68,27 @@ class BrowserPage:
     # ------------------------------------------------------------------ #
 
     def goto(self, url: str, **kwargs):
+        """Navigate to `url` using the Playwright page."""
         logger.info("Navigate -> %s", url)
         return self._page.goto(url, **kwargs)
 
     def reload(self):
+        """Reload the current page."""
         logger.info("Reload page")
         return self._page.reload()
 
     def back(self):
+        """Navigate back in browser history."""
         logger.info("Navigate back")
         return self._page.go_back()
 
     def forward(self):
+        """Navigate forward in browser history."""
         logger.info("Navigate forward")
         return self._page.go_forward()
 
     def close(self):
+        """Close the underlying Playwright page."""
         logger.info("Closing page")
         self._page.close()
 
@@ -212,15 +220,19 @@ class PageManager:
     # ------------------------------------------------------------------ #
 
     def goto(self, url: str):
+        """Navigate active page to `url`."""
         return self.current.goto(url)
 
     def reload(self):
+        """Reload the active page."""
         return self.current.reload()
 
     def back(self):
+        """Navigate back on the active page."""
         return self.current.back()
 
     def forward(self):
+        """Navigate forward on the active page."""
         return self.current.forward()
 
     # ------------------------------------------------------------------ #

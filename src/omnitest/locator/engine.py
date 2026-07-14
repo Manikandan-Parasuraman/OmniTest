@@ -60,7 +60,7 @@ class LocatorEngine:
         try:
             return handlers[strategy]()
 
-        except KeyError:
+        except KeyError as exc:
             raise ValueError(
                 f"Unsupported selector strategy '{strategy}'."
-            )
+            ) from exc
