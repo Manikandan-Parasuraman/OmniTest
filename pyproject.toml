@@ -88,3 +88,16 @@ target-version = "py310"
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP"]
+
+[tool.pylint.main]
+ignore-paths = [
+    "^tests/.*$"
+]
+
+[tool.pylint."MESSAGES CONTROL"]
+disable = [
+    "missing-final-newline",
+    "too-few-public-methods",
+    "protected-access",
+    "missing-module-docstring",
+]
