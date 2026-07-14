@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "omnitest"
-version = "0.1.1"
+version = "0.1.2"
 description = "One platform for everything"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -49,8 +49,8 @@ dev = [
     "ruff>=0.12",
     "black>=25.0",
 
-    "pylint>=3.3.7",
-    "astroid>=3.3.10",
+    "pylint>=3.3.9",
+    "astroid>=3.3.11",
 
     "mypy>=1.17",
 
