@@ -7,9 +7,9 @@ that can be consumed by the LocatorEngine.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
 from typing import Any
-from .selector import Selector
+
+from .selector import SUPPORTED_SELECTOR_STRATEGIES, Selector
 
 
 class SelectorParser:
@@ -117,19 +117,7 @@ class SelectorParser:
 
         strategy = strategy.lower()
 
-        supported = {
-            "css",
-            "xpath",
-            "text",
-            "role",
-            "label",
-            "placeholder",
-            "testid",
-            "alt",
-            "title",
-        }
-
-        if strategy not in supported:
+        if strategy not in SUPPORTED_SELECTOR_STRATEGIES:
             raise ValueError(
                 f"Unsupported selector strategy '{strategy}'."
             )

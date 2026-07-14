@@ -1,7 +1,7 @@
 import pytest
 
 from omnitest.locator.parser import SelectorParser
-from omnitest.locator.selector import Selector
+from omnitest.locator.selector import SUPPORTED_SELECTOR_STRATEGIES, Selector
 
 
 # --------------------------------------------------------------------
@@ -80,6 +80,20 @@ def test_parse_tuple(strategy, value):
 
     assert selector.strategy == strategy
     assert selector.value == value
+
+
+def test_supported_selector_strategies_are_shared():
+    assert SUPPORTED_SELECTOR_STRATEGIES == {
+        "css",
+        "xpath",
+        "text",
+        "role",
+        "label",
+        "placeholder",
+        "testid",
+        "alt",
+        "title",
+    }
 
 
 # --------------------------------------------------------------------
