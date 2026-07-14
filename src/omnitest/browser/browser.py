@@ -170,7 +170,7 @@ class Browser:  # pylint: disable=too-many-instance-attributes
 
     def __exit__(self, exc_type, exc, tb):
         self.close()
-        
+
     # ------------------------------------------------------------------ #
     # Actions
     # ------------------------------------------------------------------ #
@@ -180,7 +180,6 @@ class Browser:  # pylint: disable=too-many-instance-attributes
         Click an element.
         """
         self._click(selector)
-
 
     def type(self, selector: str, text: str) -> None:
         """

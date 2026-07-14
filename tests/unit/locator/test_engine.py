@@ -10,7 +10,7 @@ def test_css_locator():
     LocatorEngine(page).find("#login")
 
     page.locator.assert_called_once_with("#login")
-    
+
 def test_text_locator():
 
     page = MagicMock()
