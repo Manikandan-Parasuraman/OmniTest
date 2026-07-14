@@ -70,13 +70,13 @@ include-package-data = true
 where = ["src"]
 include = ["omnitest*"]
 
-[tool.pytest.ini_options]
-testpaths = ["tests"]
-pythonpath = ["src"]
-python_files = ["test_*.py"]
-python_classes = ["Test*"]
-python_functions = ["test_*"]
-addopts = "-ra --cov=omnitest --cov-report=term-missing"
+# [tool.pytest.ini_options]
+# testpaths = ["tests"]
+# pythonpath = ["src"]
+# python_files = ["test_*.py"]
+# python_classes = ["Test*"]
+# python_functions = ["test_*"]
+# addopts = "-ra --cov=omnitest --cov-report=term-missing"
 
 [tool.coverage.run]
 source = ["src/omnitest"]
