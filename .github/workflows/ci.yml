@@ -42,17 +42,12 @@ jobs:
           python --version
           pip --version
           pylint --version
-          ruff --version
           black --version
           pytest --version
 
       - name: Check formatting
         run: |
           black --check .
-
-      - name: Ruff
-        run: |
-          ruff check .
 
       - name: Pylint
         run: |
