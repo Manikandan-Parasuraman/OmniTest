@@ -1,12 +1,13 @@
+"""Unit tests for the Browser class."""
+
 from unittest.mock import patch
 
-from omnitest.browser import Browser
+from src.omnitest.browser import Browser
 
 
 @patch("omnitest.browser.browser.sync_playwright")
-def test_browser_start(sync):
+def test_browser_start(_sync):
     """Verify that Browser starts successfully during initialization."""
-
     browser = Browser()
 
     assert browser.started

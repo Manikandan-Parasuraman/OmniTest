@@ -1,11 +1,12 @@
+"""Unit tests for the LocatorEngine class."""
+
 from unittest.mock import MagicMock
 
-from omnitest.locator import LocatorEngine
+from src.omnitest.locator import LocatorEngine
 
 
 def test_css_locator():
     """Verify that a CSS selector is resolved using page.locator()."""
-
     page = MagicMock()
 
     LocatorEngine(page).find("#login")
@@ -15,7 +16,6 @@ def test_css_locator():
 
 def test_text_locator():
     """Verify that a text selector is resolved using page.get_by_text()."""
-
     page = MagicMock()
 
     LocatorEngine(page).find("Login")

@@ -1,11 +1,10 @@
-from unittest.mock import MagicMock
+"""Unit tests for the ClickAction class."""
 
-from omnitest.actions.click import ClickAction
+from src.omnitest.actions.click import ClickAction
 
 
 def test_click(mock_browser):
     """Verify that ClickAction clicks the element matching the given selector."""
-
     action = ClickAction(mock_browser)
 
     action("#login")

@@ -12,7 +12,7 @@ from typing import Any
 from .selector import SUPPORTED_SELECTOR_STRATEGIES, Selector
 
 
-class SelectorParser:
+class SelectorParser:   # pylint: disable=too-few-public-methods
     """
     Parse user selectors into a normalized Selector object.
 

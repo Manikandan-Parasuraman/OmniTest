@@ -1,9 +1,15 @@
+"""Unit tests for the SelectorParser class."""
+
 from typing import get_args
 
 import pytest
 
-from omnitest.locator.parser import SelectorParser
-from omnitest.locator.selector import SUPPORTED_SELECTOR_STRATEGIES, Selector, SelectorType
+from src.omnitest.locator.parser import SelectorParser
+from src.omnitest.locator.selector import (
+    SUPPORTED_SELECTOR_STRATEGIES,
+    Selector,
+    SelectorType,
+)
 
 
 # --------------------------------------------------------------------
