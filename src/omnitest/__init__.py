@@ -1,7 +1,11 @@
-"""Public package interface for OmniTest."""
+"""Top-level package for omnitest."""
 
-from .hello import hello
+from . import actions, browser, exceptions, logger
 
-__version__ = "0.1.0"
 
-__all__ = ["hello"]
+def hello() -> str:
+    """Return the package greeting."""
+    return "Hello from OmniTest!"
+
+
+__all__ = ["actions", "browser", "exceptions", "logger", "hello"]

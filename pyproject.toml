@@ -8,30 +8,83 @@ version = "0.1.0"
 description = "One platform for everything"
 readme = "README.md"
 requires-python = ">=3.10"
-license = {text = "MIT"}
+license = "MIT"
 
 authors = [
-    {name = "Manikandan Parasuraman", email = "manikandan.p.learning@gmail.com"}
+    { name = "Manikandan Parasuraman", email = "manikandan.p.learning@gmail.com" }
 ]
 
 keywords = [
     "automation",
     "testing",
     "playwright",
-    "selenium",
-    "qa"
+    "qa",
+    "framework",
+    "e2e",
+    "ui-testing"
 ]
 
 classifiers = [
-    "Programming Language :: Python :: 3",
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
     "Operating System :: OS Independent",
-    "License :: OSI Approved :: MIT License"
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Testing",
 ]
 
 dependencies = []
 
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.4",
+    "pytest-cov>=7.0",
+    "pytest-mock>=3.14",
+    "faker>=37.0",
+    "ruff>=0.12",
+    "black>=25.0",
+    "build>=1.2",
+    "twine>=6.1",
+]
+
+[project.urls]
+Homepage = "https://github.com/ManikandanParasuraman/OmniTest"
+Repository = "https://github.com/ManikandanParasuraman/OmniTest"
+Issues = "https://github.com/ManikandanParasuraman/OmniTest/issues"
+
 [tool.setuptools]
-package-dir = {"" = "src"}
+package-dir = { "" = "src" }
+include-package-data = true
 
 [tool.setuptools.packages.find]
 where = ["src"]
+include = ["omnitest*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-ra -q --cov=omnitest --cov-report=term-missing"
+
+[tool.coverage.run]
+source = ["src/omnitest"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
+
+[tool.black]
+line-length = 100
+target-version = ["py310"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]

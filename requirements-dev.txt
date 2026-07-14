@@ -4,3 +4,7 @@ flake8
 isort
 build
 twine
+playwright
+pytest-cov
+pytest-mock
+faker
