@@ -1,6 +1,6 @@
 """Unit tests for the BrowserConfig class."""
 
-from src.omnitest.browser import BrowserConfig
+from omnitest.browser import BrowserConfig
 
 
 def test_default_headless():

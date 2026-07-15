@@ -2,7 +2,7 @@
 
 from unittest.mock import MagicMock
 
-from src.omnitest.locator import LocatorEngine
+from omnitest.locator import LocatorEngine
 
 
 def test_css_locator():

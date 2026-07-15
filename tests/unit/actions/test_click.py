@@ -1,6 +1,6 @@
 """Unit tests for the ClickAction class."""
 
-from src.omnitest.actions.click import ClickAction
+from omnitest.actions.click import ClickAction
 
 
 def test_click(mock_browser):

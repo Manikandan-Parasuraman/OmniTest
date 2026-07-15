@@ -2,7 +2,7 @@
 
 import pytest
 
-from src.omnitest.locator import SelectorParser
+from omnitest.locator import SelectorParser
 
 
 def test_parse_css_selector():

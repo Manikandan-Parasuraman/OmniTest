@@ -2,7 +2,7 @@
 
 from unittest.mock import MagicMock, patch
 
-from src.omnitest.actions.fill import FillAction
+from omnitest.actions.fill import FillAction
 
 
 @patch("omnitest.actions.fill.BaseAction.execute")

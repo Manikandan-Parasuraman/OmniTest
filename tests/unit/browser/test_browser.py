@@ -2,7 +2,7 @@
 
 from unittest.mock import patch
 
-from src.omnitest.browser import Browser
+from omnitest.browser import Browser
 
 
 @patch("omnitest.browser.browser.sync_playwright")

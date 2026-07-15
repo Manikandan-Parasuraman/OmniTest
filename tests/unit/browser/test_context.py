@@ -2,8 +2,8 @@
 
 from unittest.mock import MagicMock
 
-from src.omnitest.browser.context import BrowserContext
-from src.omnitest.browser.page import PageManager
+from omnitest.browser.context import BrowserContext
+from omnitest.browser.page import PageManager
 
 
 def test_browser_reference():
