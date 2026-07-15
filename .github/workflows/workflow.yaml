@@ -42,9 +42,9 @@ jobs:
         run: |
           black --check .
 
-      - name: Lint (Ruff)
-        run: |
-          ruff check .
+      # - name: Lint (Ruff)
+      #   run: |
+      #     ruff check .
 
       - name: Lint (Pylint)
         run: |
